@@ -1,7 +1,7 @@
 <div class="task-group-card">
 
   <div class="task-group-header">
-    <span class="fw-bolder">{{ taskGroup?.groupName }}</span>
+    <div class="group-title"><mat-icon>{{ taskGroup.icon }}</mat-icon><span>{{ taskGroup?.groupName }}</span></div>
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>

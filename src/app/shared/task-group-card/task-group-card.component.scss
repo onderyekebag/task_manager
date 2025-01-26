@@ -44,3 +44,33 @@
   }
 
 }
+
+.group-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #000000;
+  span {
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+
+  mat-icon {
+    &:nth-child(1) {
+      color: #000000;
+    }
+
+    &:nth-child(2) {
+      color: #00ca00;
+    }
+
+    &:nth-child(3) {
+      color: #ca0018;
+    }
+
+    &:nth-child(4) {
+      color: #d300d3;
+    }
+  }
+
+}

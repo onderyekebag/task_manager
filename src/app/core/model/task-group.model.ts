@@ -2,6 +2,7 @@ export interface TaskGroupModel {
   id?: string;
   groupName?: string;
   assignTaskNumber?: number;
+  icon?: string;
 }
 
 export interface TaskModel {
