@@ -1,0 +1,20 @@
+<div class="task-card">
+  <div class="task-card-content">
+    <span>{{ task.title }}</span>
+    <p>{{ task.description }}</p>
+  </div>
+  <div class="task-action">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onDeleteTask(task.id)"><mat-icon>delete</mat-icon>Delete</button>
+      <button mat-menu-item [matMenuTriggerFor]="moveMenu"><mat-icon>move_to_inbox</mat-icon>Move</button>
+      <mat-menu #moveMenu="matMenu">
+        <button mat-menu-item *ngFor="let group of taskGroups" (click)="onMoveGroup(group.id)">
+          {{ group.groupName }}
+        </button>
+      </mat-menu>
+    </mat-menu>
+  </div>
+</div>

@@ -1,1 +1,7 @@
-<p>task-manager works!</p>
+<section class="task-group-cards-content" cdkDropList
+         cdkDropListOrientation="horizontal" [cdkDropListData]="groupByTask"
+         (cdkDropListDropped)="onDrop($event)">
+  <ng-container *ngFor="let group of groupByTask; let i = index">
+    <app-task-group-card [taskGroup]="group"></app-task-group-card>
+  </ng-container>
+</section>

@@ -1,15 +1,18 @@
 export interface TaskGroupModel {
-  id: number;
-  groupName: string;
-  assignTaskNumber: number;
-  taskCount?: number;
+  id?: string;
+  groupName?: string;
+  assignTaskNumber?: number;
 }
 
 export interface TaskModel {
-  id: number;
+  id?: number;
   title: string;
   description: string;
   createDate: string;
-  taskGroup: number;
+  taskGroupId: string;
   status: boolean;
+}
+
+export interface GroupByTask extends TaskGroupModel{
+  tasks: TaskModel[];
 }

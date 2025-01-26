@@ -1,0 +1,17 @@
+<div class="new-task-form" [formGroup]="newTaskForm">
+  <span class="fw-bold mb-4 text-">Create New Task</span>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input type="text" formControlName="title" matInput placeholder="Enter the title here.">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea type="text" formControlName="description"  matInput placeholder="Enter the description here."></textarea>
+  </mat-form-field>
+
+  <button mat-flat-button (click)="onCreateNewTask()">
+    <span>Create Task</span>
+    <mat-icon>add</mat-icon>
+  </button>
+
+</div>

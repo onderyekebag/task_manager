@@ -1,0 +1,31 @@
+
+.topbar-layout {
+  width: 100%;
+  background: #9e5a5a;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 26px;
+    color: #fff;
+    font-weight: 600;
+    word-spacing: 5px;
+    letter-spacing: 4px;
+    cursor: pointer;
+  }
+
+  .buttons {
+    button {
+      color: #fff !important;
+    }
+  }
+
+}

@@ -152,7 +152,7 @@
   optionalDependencies:
     lmdb "3.2.2"
 
-"@angular/cdk@19.1.1":
+"@angular/cdk@^19.1.1":
   version "19.1.1"
   resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-19.1.1.tgz#4088b8495611a1c5c7f06b5cabbfaa00d96eb261"
   integrity sha512-MmfNB9iANuDN1TS+HL8uKqA3/7pdVeCRN+HdAcfqFrcqZmSUUSlYWy8PXqymmyeXxoSwt9p4I/6R0By03VoCMw==

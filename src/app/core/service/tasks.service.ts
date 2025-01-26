@@ -15,7 +15,7 @@ export class TasksService {
   }
 
   createNewTask(dto: TaskModel) {
-    return this.http.post(`${this.path}`, dto);
+    return this.http.post<TaskModel>(`${this.path}`, dto);
   }
 
   taskTransfer(dto: TaskModel) {
@@ -26,8 +26,8 @@ export class TasksService {
     return this.http.put(`${this.path}/${dto.id}`, dto);
   }
 
-  deleteTask(dto: TaskModel) {
-    return this.http.delete(`${this.path}/${dto.id}`);
+  deleteTask(taskId: string) {
+    return this.http.delete(`${this.path}/${taskId}`);
   }
 
 }
