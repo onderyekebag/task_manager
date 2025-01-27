@@ -6,7 +6,7 @@ export interface TaskGroupModel {
 }
 
 export interface TaskModel {
-  id?: number;
+  id?: string;
   title: string;
   description: string;
   createDate: string;

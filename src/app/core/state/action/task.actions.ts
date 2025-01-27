@@ -19,10 +19,10 @@ export namespace TaskActions {
     }
   }
 
-  export class UpdateTaskGroups {
+  export class UpdateTaskGroup {
     static readonly type = '[TASK] UPDATE TASK';
 
-    constructor(public taskGroupId: number, public task: TaskModel) {
+    constructor(public task: TaskModel) {
     }
   }
 }

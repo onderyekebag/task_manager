@@ -21,7 +21,8 @@ export class TaskCardComponent implements OnInit {
 
   taskGroups: TaskGroupModel[] = [];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit() {
     this.currentGroup();
@@ -30,13 +31,22 @@ export class TaskCardComponent implements OnInit {
   onDeleteTask(id: any) {
     StaticStore.dispatch(new TaskActions.DeleteTask(id)).pipe(
       take(1)
-    ).subscribe(()=> {
+    ).subscribe(() => {
       location.reload();
     })
   }
 
-  onMoveGroup(id?: string) {
-    console.log('Moved : ', id)
+  onChangeGroup(task?: TaskModel, id?: string) {
+    if (!task || !id) {
+      return;
+    }
+
+    task.taskGroupId = id;
+    StaticStore.dispatch(new TaskActions.UpdateTaskGroup(task)).pipe(
+      take(1)
+    ).subscribe(() => {
+      location.reload();
+    })
   }
 
   currentGroup() {
@@ -45,10 +55,10 @@ export class TaskCardComponent implements OnInit {
   }
 
   showTaskDetail(task: TaskModel) {
-    const dialogRef = this.dialog.open(TaskDialogComponent, {
+    this.dialog.open(TaskDialogComponent, {
       width: '1000px',
       height: '500px',
-      data: { task, isDetail: true, isNewTask: false },
+      data: {task, isDetail: true, isNewTask: false},
     });
   }
 }

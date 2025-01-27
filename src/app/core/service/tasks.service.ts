@@ -19,11 +19,11 @@ export class TasksService {
   }
 
   updateTask(dto: TaskModel) {
-    return this.http.put(`${this.path}/${dto.id}`, dto);
+    return this.http.put<TaskModel>(`${this.path}/${dto.id}`, dto);
   }
 
   deleteTask(taskId: string) {
-    return this.http.delete(`${this.path}/${taskId}`);
+    return this.http.delete<TaskModel>(`${this.path}/${taskId}`);
   }
 
 }

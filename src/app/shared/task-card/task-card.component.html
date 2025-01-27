@@ -11,7 +11,7 @@
       <button mat-menu-item (click)="onDeleteTask(task.id)"><mat-icon>delete</mat-icon>Delete</button>
       <button mat-menu-item [matMenuTriggerFor]="moveMenu"><mat-icon>move_to_inbox</mat-icon>Move</button>
       <mat-menu #moveMenu="matMenu">
-        <button mat-menu-item *ngFor="let group of taskGroups" (click)="onMoveGroup(group.id)">
+        <button mat-menu-item *ngFor="let group of taskGroups" (click)="onChangeGroup(task, group.id)">
           {{ group.groupName }}
         </button>
       </mat-menu>

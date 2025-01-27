@@ -67,6 +67,22 @@ export class TaskState {
     )
   }
 
+  @Action(TaskActions.UpdateTaskGroup)
+  updateTask({patchState, getState}: StateContext<TaskStateModel>, {task}: TaskActions.UpdateTaskGroup) {
+    return this.service.updateTask(task).pipe(
+      tap((updatedTask) => {
+        const state = getState();
+        const updatedTasks = state.tasks.map(t =>
+          t.id === updatedTask.id ? updatedTask : t
+        );
+
+        patchState({
+          tasks: updatedTasks
+        });
+      })
+    )
+  }
+
 
 
 }
