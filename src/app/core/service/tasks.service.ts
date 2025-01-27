@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
-import {TaskGroupModel, TaskModel} from "../model/task-group.model";
+import {TaskModel} from "../model/task-group.model";
 
 @Injectable({providedIn: 'root'})
 export class TasksService {
@@ -18,11 +18,7 @@ export class TasksService {
     return this.http.post<TaskModel>(`${this.path}`, dto);
   }
 
-  taskTransfer(dto: TaskModel) {
-    return this.http.put(`${this.path}/${dto.id}`, dto);
-  }
-
-  changeTaskStatus(dto: TaskModel) {
+  updateTask(dto: TaskModel) {
     return this.http.put(`${this.path}/${dto.id}`, dto);
   }
 

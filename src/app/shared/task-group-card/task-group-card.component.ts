@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {GroupByTask} from '../../core/model/task-group.model';
+import {GroupByTask, TaskModel} from '../../core/model/task-group.model';
 import {MatDialog} from '@angular/material/dialog';
 import {TaskDialogComponent} from '../task-dialog/task-dialog.component';
 
@@ -21,13 +21,8 @@ export class TaskGroupCardComponent {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       width: '1000px',
       height: '500px',
-      data: { id }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog kapandı, dönen sonuç:', result);
+      data: { id, isDetail: false, isNewTask: true },
     });
 
   }
-
 }

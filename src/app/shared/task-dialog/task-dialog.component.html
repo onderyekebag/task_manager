@@ -1,4 +1,4 @@
-<div class="new-task-form" [formGroup]="newTaskForm">
+<div class="new-task-form" [formGroup]="newTaskForm" *ngIf="data.isNewTask">
   <span class="fw-bold mb-4 text-">Create New Task</span>
   <mat-form-field>
     <mat-label>Title</mat-label>
@@ -14,4 +14,16 @@
     <mat-icon>add</mat-icon>
   </button>
 
+</div>
+
+<div class="task-detail" *ngIf="data.isDetail">
+  <span class="fw-bold mb-4 text-">Task Detail</span>
+  <div class="task-detail-content">
+    <p class="title">{{ data.task.title }}</p>
+    <p class="desc">{{ data.task.description }}</p>
+  </div>
+  <div class="detail">
+    <span>{{ data.task.createDate }}</span>
+    <span>{{ data.task.status ? 'Complete' : 'UnComplete' }}</span>
+  </div>
 </div>

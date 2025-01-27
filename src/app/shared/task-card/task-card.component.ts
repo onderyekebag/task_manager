@@ -4,6 +4,8 @@ import {StaticStore} from '../../core/core.module';
 import {TaskActions} from '../../core/state/action/task.actions';
 import {take} from 'rxjs';
 import {TaskGroupState} from '../../core/state/task-group.state';
+import {TaskDialogComponent} from '../task-dialog/task-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-task-card',
@@ -18,6 +20,8 @@ export class TaskCardComponent implements OnInit {
   task!: TaskModel;
 
   taskGroups: TaskGroupModel[] = [];
+
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {
     this.currentGroup();
@@ -40,4 +44,11 @@ export class TaskCardComponent implements OnInit {
     this.taskGroups = taskGroupAll.filter(taskGroup => taskGroup.id !== this.task.taskGroupId)
   }
 
+  showTaskDetail(task: TaskModel) {
+    const dialogRef = this.dialog.open(TaskDialogComponent, {
+      width: '1000px',
+      height: '500px',
+      data: { task, isDetail: true, isNewTask: false },
+    });
+  }
 }
